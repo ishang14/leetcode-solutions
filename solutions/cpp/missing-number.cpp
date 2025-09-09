@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n=nums.size();
+        int xor1=0,xor2=0;
+
+        for(int i=0;i<=n;i++)
+        {
+            if(i!=n)
+            {
+                xor1^=nums[i];
+            }
+            xor2^=i;
+        }
+
+        int ans=xor1^xor2;
+
+        return ans;
+    }
+};
